@@ -10,7 +10,7 @@ class BoardsController < ApplicationController
   end
 
   def index
-    @boards = Board.all
+    @boards = current_user.boards.page(params[:page]).per(10)
 
     render("boards/index.html.erb")
   end
