@@ -10,7 +10,8 @@ class BoardsController < ApplicationController
   end
 
   def index
-    @boards = current_user.boards.page(params[:page]).per(10)
+    @q = current_user.boards.ransack(params[:q])
+      @boards = @q.result(:distinct => true).includes(:user, :lists).page(params[:page]).per(10)
 
     render("boards/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   def index
-    @cards = Card.page(params[:page]).per(10)
+    @q = Card.ransack(params[:q])
+    @cards = @q.result(:distinct => true).includes(:list, :comments).page(params[:page]).per(10)
 
     render("cards/index.html.erb")
   end
