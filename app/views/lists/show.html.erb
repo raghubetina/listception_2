@@ -9,7 +9,13 @@
       <dd><%= @list.title %></dd>
 
       <dt>Board</dt>
-      <dd><%= @list.board_id %></dd>
+      <dd>
+        <% if @list.board.present? %>
+          <a href="/boards/<%= @list.board_id %>">
+            <%= @list.board.title %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

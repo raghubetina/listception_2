@@ -17,7 +17,13 @@
       <% @lists.each do |list| %>
       <tr>
         <td><%= list.title %></td>
-        <td><%= list.board.title %></td>
+        <td>
+          <% if list.board.present? %>
+            <a href="/boards/<%= list.board.id %>">
+              <%= list.board.title %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/lists/<%= list.id %>" class="btn btn-primary">Show</a>
           <a href="/lists/<%= list.id %>/edit" class="btn btn-warning">Edit</a>

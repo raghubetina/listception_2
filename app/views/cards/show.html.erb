@@ -12,7 +12,13 @@
       <dd><%= @card.description %></dd>
 
       <dt>List</dt>
-      <dd><%= @card.list_id %></dd>
+      <dd>
+        <% if @card.list.present? %>
+          <a href="/lists/<%= @card.list_id %>">
+            <%= @card.list.title %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Image</dt>
       <dd><img src="<%= @card.image %>" class="img-responsive"></dd>

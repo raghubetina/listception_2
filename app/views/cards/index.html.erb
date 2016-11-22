@@ -20,7 +20,13 @@
       <tr>
         <td><%= card.title %></td>
         <td><%= card.description %></td>
-        <td><%= card.list.title %></td>
+        <td>
+          <% if card.list.present? %>
+            <a href="/lists/<%= card.list.id %>">
+              <%= card.list.title %>
+            </a>
+          <% end %>
+        </td>
         <td><img src='<%= card.image %>' class='img-responsive'></td>
         <td>
           <a href="/cards/<%= card.id %>" class="btn btn-primary">Show</a>
