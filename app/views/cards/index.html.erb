@@ -21,7 +21,7 @@
         <td><%= card.title %></td>
         <td><%= card.description %></td>
         <td><%= card.list.title %></td>
-        <td><%= card.image %></td>
+        <td><img src='<%= card.image %>' class='img-responsive'></td>
         <td>
           <a href="/cards/<%= card.id %>" class="btn btn-primary">Show</a>
           <a href="/cards/<%= card.id %>/edit" class="btn btn-warning">Edit</a>
