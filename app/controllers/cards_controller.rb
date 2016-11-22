@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   def index
-    @cards = Card.all
+    @cards = Card.page(params[:page]).per(10)
 
     render("cards/index.html.erb")
   end
