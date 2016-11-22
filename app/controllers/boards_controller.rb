@@ -1,4 +1,14 @@
 class BoardsController < ApplicationController
+  before_action :current_user_must_be_board_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_board_user
+    board = Board.find(params[:id])
+
+    unless current_user == board.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @boards = Board.all
 
