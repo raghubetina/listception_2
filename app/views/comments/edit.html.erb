@@ -24,7 +24,7 @@
           Card
         </label>
 
-        <input type="text" id="card_id" name="card_id" placeholder="Card" class="form-control" value="<%= @comment.card_id %>">
+        <%= select_tag(:card_id, options_from_collection_for_select(Card.all, :id, :title, @comment.card_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for body -->
