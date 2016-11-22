@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Card resource:
+  # CREATE
+  get "/cards/new", :controller => "cards", :action => "new"
+  post "/create_card", :controller => "cards", :action => "create"
+
+  # READ
+  get "/cards", :controller => "cards", :action => "index"
+  get "/cards/:id", :controller => "cards", :action => "show"
+
+  # UPDATE
+  get "/cards/:id/edit", :controller => "cards", :action => "edit"
+  post "/update_card/:id", :controller => "cards", :action => "update"
+
+  # DELETE
+  get "/delete_card/:id", :controller => "cards", :action => "destroy"
+  #------------------------------
+
   # Routes for the List resource:
   # CREATE
   get "/lists/new", :controller => "lists", :action => "new"
