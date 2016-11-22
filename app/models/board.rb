@@ -1,6 +1,9 @@
 class Board < ApplicationRecord
   # Direct associations
 
+  has_many   :lists,
+             :dependent => :destroy
+
   belongs_to :user
 
   # Indirect associations
