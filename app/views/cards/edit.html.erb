@@ -42,7 +42,7 @@
           List
         </label>
 
-        <input type="text" id="list_id" name="list_id" placeholder="List" class="form-control" value="<%= @card.list_id %>">
+        <%= select_tag(:list_id, options_from_collection_for_select(List.all, :id, :title, @card.list_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for image -->
