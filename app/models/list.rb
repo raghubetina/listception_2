@@ -5,6 +5,8 @@ class List < ApplicationRecord
 
   # Validations
 
+  validates :board_id, :presence => true
+
   validates :title, :presence => true
 
 end
