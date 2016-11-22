@@ -1,6 +1,8 @@
 class Card < ApplicationRecord
   # Direct associations
 
+  belongs_to :list
+
   # Indirect associations
 
   # Validations
