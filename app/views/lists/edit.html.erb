@@ -33,7 +33,7 @@
           Board
         </label>
 
-        <input type="text" id="board_id" name="board_id" placeholder="Board" class="form-control" value="<%= @list.board_id %>">
+        <%= select_tag(:board_id, options_from_collection_for_select(Board.all, :id, :title, @list.board_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
