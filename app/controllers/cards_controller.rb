@@ -6,6 +6,7 @@ class CardsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @card = Card.find(params[:id])
 
     render("cards/show.html.erb")
